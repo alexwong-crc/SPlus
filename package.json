@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/alexwong-crc/SPlus/issues"
   },
-  "homepage": "https://github.com/alexwong-crc/SPlus#readme"
+  "homepage": "https://github.com/alexwong-crc/SPlus#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@storybook/react": "^5.2.3",
+    "babel-loader": "^8.0.6"
+  },
+  "dependencies": {
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  }
 }
