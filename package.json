@@ -4,7 +4,8 @@
   "description": "An Opinionated Design System",
   "main": "index.js",
   "scripts": {
-    "start": "start-storybook --config-dir config/storybook"
+    "start": "start-storybook --config-dir config/storybook",
+    "test": "jest --config ./config/jest/config.js"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,14 @@
   "homepage": "https://github.com/alexwong-crc/SPlus#readme",
   "devDependencies": {
     "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
     "@storybook/react": "^5.2.3",
-    "babel-loader": "^8.0.6"
+    "babel-loader": "^8.0.6",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "enzyme-to-json": "^3.4.3",
+    "jest": "^24.9.0"
   },
   "dependencies": {
     "react": "^16.10.2",
