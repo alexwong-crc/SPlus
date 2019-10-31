@@ -3,4 +3,4 @@ import Button from './index'
 
 export default {title: 'Button'}
 
-export const withText = () => <Button />
+export const withText = () => <Button name="Typescript" />

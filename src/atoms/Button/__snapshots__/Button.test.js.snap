@@ -2,6 +2,6 @@
 
 exports[`Button should snapshot the button 1`] = `
 <button>
-  Hello World
+  Hello Typescript
 </button>
 `;

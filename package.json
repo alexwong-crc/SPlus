@@ -21,12 +21,14 @@
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
+    "@babel/preset-typescript": "^7.6.0",
     "@storybook/react": "^5.2.3",
     "babel-loader": "^8.0.6",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "enzyme-to-json": "^3.4.3",
-    "jest": "^24.9.0"
+    "jest": "^24.9.0",
+    "typescript": "^3.6.4"
   },
   "dependencies": {
     "react": "^16.10.2",
