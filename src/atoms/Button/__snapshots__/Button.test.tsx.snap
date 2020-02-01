@@ -1,8 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button should snapshot the button 1`] = `
-<button>
-  Hello 
+<styled.button
+  type="button"
+>
+  Hello
   typescript test
-</button>
+</styled.button>
 `;
