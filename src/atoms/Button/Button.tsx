@@ -4,4 +4,11 @@ interface IProps {
   name: string;
 }
 
-export default (props: IProps) => <button>Hello {props.name}</button>;
+const Button: React.SFC<IProps> = ({ name }: IProps) => (
+  <button type="button">
+    Hello
+    {name}
+  </button>
+);
+
+export default Button;
