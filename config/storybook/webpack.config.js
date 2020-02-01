@@ -1,23 +1,23 @@
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
-module.exports = ({config}) => {
+module.exports = ({ config }) => {
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
     use: [
       {
-        loader: require.resolve('babel-loader')
+        loader: require.resolve("babel-loader")
       }
     ]
-  })
-  config.resolve.extensions.push('.ts', '.tsx')
+  });
+  config.resolve.extensions.push(".ts", ".tsx");
 
   config.plugins.push(
     new ForkTsCheckerWebpackPlugin({
-      tsconfig: './tsconfig.json',
+      tsconfig: "./tsconfig.json",
       async: false,
       checkSyntacticErrors: true
     })
-  )
+  );
 
-  return config
-}
+  return config;
+};

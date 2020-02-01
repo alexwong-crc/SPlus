@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
 interface IProps {
-  name: string
+  name: string;
 }
 
-export default (props: IProps) => <button>Hello {props.name}</button>
+export default (props: IProps) => <button>Hello {props.name}</button>;
