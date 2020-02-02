@@ -25,5 +25,5 @@
     "types": ["jest", "enzyme", "enzyme-adapter-react-16", "styled-components"]
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "build"]
+  "exclude": ["src/**/*.stories.*", "src/**/*.test.*"]
 }
