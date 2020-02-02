@@ -2,7 +2,8 @@
   "name": "splus",
   "version": "1.0.0",
   "description": "An Opinionated Design System",
-  "main": "index.js",
+  "main": "build/index.js",
+  "typings": "build/index.d.ts",
   "scripts": {
     "start": "start-storybook --config-dir config/storybook",
     "test": "jest --config ./config/jest/config.js",
