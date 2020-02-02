@@ -7,7 +7,9 @@
   "scripts": {
     "start": "start-storybook --config-dir config/storybook",
     "test": "jest --config ./config/jest/config.js",
-    "lint": "eslint . --ext .ts,.tsx"
+    "lint": "eslint . --ext .ts,.tsx",
+    "clean": "rm -rf build",
+    "build": "yarn clean && tsc"
   },
   "repository": {
     "type": "git",
