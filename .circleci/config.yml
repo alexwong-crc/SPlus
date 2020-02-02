@@ -42,7 +42,7 @@ jobs:
           command: npm publish
 workflows:
   version: 2
-  Build-and-deploy:
+  Build-and-Publish:
     jobs:
       - Build
       - Unit-Tests:
