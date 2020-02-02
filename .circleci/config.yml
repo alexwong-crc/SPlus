@@ -27,6 +27,17 @@ jobs:
       - run:
           name: Yarn test
           command: yarn test
+  Publish:
+    docker:
+      - image: circleci/node:12.14-browsers
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Publish
+          command: yarn build
+      - run: ls -a
 workflows:
   version: 2
   Build-and-deploy:
@@ -35,3 +46,6 @@ workflows:
       - Unit-Tests:
           requires:
             - Build
+      - Publish:
+          requires:
+            - Unit-Tests
