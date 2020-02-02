@@ -38,6 +38,9 @@ jobs:
           name: Build package
           command: yarn build
       - run:
+          name: Authenticate with NPM
+          command: echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
+      - run:
           name: Publish to NPM
           command: npm publish
 workflows:
