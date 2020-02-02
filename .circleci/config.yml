@@ -35,9 +35,11 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Publish
+          name: Build package
           command: yarn build
-      - run: ls -a
+      - run:
+          name: Publish to NPM
+          command: npm publish
 workflows:
   version: 2
   Build-and-deploy:
