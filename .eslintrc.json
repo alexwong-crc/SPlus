@@ -26,7 +26,6 @@
     ],
     "quotes": ["error", "double"],
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
-    "comma-dangle": ["error", "always-multiline"],
     "@typescript-eslint/semi": ["error", "always"],
     "@typescript-eslint/interface-name-prefix": ["error", "always"]
   },
@@ -36,5 +35,14 @@
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
 }
