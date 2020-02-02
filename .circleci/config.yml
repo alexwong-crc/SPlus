@@ -54,3 +54,7 @@ workflows:
       - Publish:
           requires:
             - Unit-Tests
+          filters:
+            branches:
+              only:
+                - master
