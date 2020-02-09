@@ -45,12 +45,18 @@
     "eslint-plugin-react-hooks": "^2.3.0",
     "fork-ts-checker-webpack-plugin": "^3.0.1",
     "jest": "^25.1.0",
+    "jest-styled-components": "^7.0.0",
     "react-is": "^16.12.0",
     "ts-jest": "^25.2.0",
     "typescript": "^3.7.5",
     "webpack": "^4.41.5"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-brands-svg-icons": "^5.12.1",
+    "@fortawesome/free-regular-svg-icons": "^5.12.1",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-fontawesome": "^0.1.8",
     "@types/styled-components": "^4.4.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
