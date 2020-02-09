@@ -2,7 +2,7 @@ import { shallow } from "enzyme";
 import React from "react";
 import Button, { StyledButton } from "./Button";
 
-describe("Button", () => {
+describe("Button Component", () => {
   it("should snapshot the button", () => {
     const component = shallow(<Button name="Submit" />);
     expect(component).toMatchSnapshot();
@@ -24,7 +24,7 @@ describe("Button", () => {
   });
 });
 
-describe("StyledButton", () => {
+describe("StyledButton Component", () => {
   it("should snapshot the styled button", () => {
     const component = shallow(<StyledButton type="button" />);
     expect(component).toMatchSnapshot();

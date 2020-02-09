@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button should snapshot the button 1`] = `
+exports[`Button Component should snapshot the button 1`] = `
 <styled.button
   type="button"
 >
@@ -8,7 +8,7 @@ exports[`Button should snapshot the button 1`] = `
 </styled.button>
 `;
 
-exports[`StyledButton should snapshot the styled button 1`] = `
+exports[`StyledButton Component should snapshot the styled button 1`] = `
 .c0 {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;

@@ -14,15 +14,19 @@ const Icon: React.SFC<FontAwesomeIconProps> = ({
   flip,
   rotation,
   size,
-  inverse = false,
-  spin = false,
-  listItem = false,
-  border = false,
+  inverse,
+  spin,
+  listItem,
+  border,
   pull,
   transform,
   mask,
   fixedWidth,
-  className
+  className,
+  pulse,
+  swapOpacity,
+  symbol,
+  title
 }: FontAwesomeIconProps) => (
   <FontAwesomeIcon
     className={className}
@@ -38,6 +42,10 @@ const Icon: React.SFC<FontAwesomeIconProps> = ({
     transform={transform}
     mask={mask}
     fixedWidth={fixedWidth}
+    pulse={pulse}
+    swapOpacity={swapOpacity}
+    symbol={symbol}
+    title={title}
   />
 );
 
