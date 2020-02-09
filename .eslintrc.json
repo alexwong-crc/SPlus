@@ -27,7 +27,8 @@
     "quotes": ["error", "double"],
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "@typescript-eslint/semi": ["error", "always"],
-    "@typescript-eslint/interface-name-prefix": ["error", "always"]
+    "@typescript-eslint/interface-name-prefix": ["error", "always"],
+    "import/extensions": "none"
   },
   "settings": {
     "import/resolver": {
