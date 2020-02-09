@@ -16,7 +16,6 @@ export const StyledButton = styled.button<IStyledButton>`
   background-color: ${action.main.code};
   color: ${action.main.text};
   border: none;
-  transition: 0.3s;
   font-size: 0.8rem;
   position: relative;
   :active {
@@ -27,6 +26,11 @@ export const StyledButton = styled.button<IStyledButton>`
   }
   :focus {
     outline: none;
+  }
+  :disabled {
+    cursor: default;
+    opacity: 0.6;
+    background-color: ${action.main.code};
   }
   span.text {
     opacity: ${({ loading }): number => (loading ? 0 : 1)};
@@ -47,6 +51,7 @@ interface IButton {
   type?: "button" | "submit" | "reset";
   onClick?: () => void;
   loading?: boolean;
+  disabled?: boolean;
 }
 interface IProps extends IButton {
   children: React.ReactNode;
@@ -56,13 +61,19 @@ const Button: React.SFC<IButton> = ({
   type = "button",
   onClick,
   children,
-  loading
+  loading,
+  disabled
 }: IProps) => {
   return (
-    <StyledButton type={type} onClick={onClick} loading={loading}>
+    <StyledButton
+      type={type}
+      onClick={onClick}
+      loading={loading}
+      disabled={disabled}
+    >
       {loading && (
         <span className="icon">
-          <Icon icon="spinner" spin />
+          <Icon icon="spinner" spin transform="grow-5" />
         </span>
       )}
       <span className="text">{children}</span>
