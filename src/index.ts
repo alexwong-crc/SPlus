@@ -1,3 +1,5 @@
+import "./index.css";
 import Button from "./atoms/Button";
+import Icon from "./atoms/Icon";
 
-export { Button }; // eslint-disable-line
+export { Button, Icon };
