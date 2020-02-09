@@ -26,9 +26,11 @@ const Icon: React.SFC<FontAwesomeIconProps> = ({
   pulse,
   swapOpacity,
   symbol,
-  title
+  title,
+  color
 }: FontAwesomeIconProps) => (
   <FontAwesomeIcon
+    color={color}
     className={className}
     icon={icon}
     size={size}

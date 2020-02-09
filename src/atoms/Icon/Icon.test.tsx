@@ -27,7 +27,8 @@ describe("Icon Component", () => {
       swapOpacity: false,
       symbol: false,
       title: "",
-      transform: null
+      transform: null,
+      color: undefined
     };
 
     expect(component.props()).toMatchObject(defaultProps);
@@ -138,5 +139,10 @@ describe("Icon Component", () => {
     );
 
     expect(component.props().transform).toMatchObject(transformOptions);
+  });
+
+  it("should pass the prop: colour", () => {
+    const component = shallow(<Icon icon="spinner" color="#FFFFFF" />);
+    expect(component.props().color).toEqual("#FFFFFF");
   });
 });
