@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Icon } from "../../index";
+import TransitionIcon from "./TransitionIcon";
 
 interface IStyledButton {
   type: "button" | "submit" | "reset";
@@ -68,6 +69,7 @@ const Button: React.SFC<IButton> = ({
       loading={loading}
       disabled={disabled}
     >
+      <TransitionIcon />
       {loading && (
         <span className="icon">
           <Icon icon="spinner" spin transform="grow-5" />
