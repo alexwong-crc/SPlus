@@ -5,5 +5,8 @@ module.exports = {
   transform: {
     "^.+\\.tsx?$": "ts-jest"
   },
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json"]
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json"],
+  moduleNameMapper: {
+    "\\.css": "identity-obj-proxy"
+  }
 };
