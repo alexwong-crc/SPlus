@@ -1,8 +1,8 @@
-import React from "react";
 import { shallow } from "enzyme";
-import Button from "./index";
+import React from "react";
+import Button, { StyledButton } from "./Button";
 
-describe("Button", () => {
+describe("Button Component", () => {
   it("should snapshot the button", () => {
     const component = shallow(<Button name="Submit" />);
     expect(component).toMatchSnapshot();
@@ -21,5 +21,12 @@ describe("Button", () => {
   it("should accept the button type value", () => {
     const component = shallow(<Button name="Submit Type" type="submit" />);
     expect(component.props().type).toEqual("submit");
+  });
+});
+
+describe("StyledButton Component", () => {
+  it("should snapshot the styled button", () => {
+    const component = shallow(<StyledButton type="button" />);
+    expect(component).toMatchSnapshot();
   });
 });

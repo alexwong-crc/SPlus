@@ -1,5 +1,5 @@
 module.exports = {
-  setupFiles: ["<rootDir>/config/jest/jest.setup.ts"],
+  setupFilesAfterEnv: ["<rootDir>/config/jest/jest.setup.ts"],
   snapshotSerializers: ["enzyme-to-json/serializer"],
   rootDir: "../../",
   transform: {

@@ -1,9 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button should snapshot the button 1`] = `
+exports[`Button Component should snapshot the button 1`] = `
 <styled.button
   type="button"
 >
   Submit
 </styled.button>
+`;
+
+exports[`StyledButton Component should snapshot the styled button 1`] = `
+.c0 {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #76C56F;
+  color: #FFFFFF;
+  border: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 0.8rem;
+}
+
+.c0:active {
+  background-color: #32AA27;
+}
+
+.c0:hover {
+  cursor: pointer;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+<button
+  className="c0"
+  type="button"
+/>
 `;
