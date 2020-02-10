@@ -1,6 +1,6 @@
 {
   "name": "splus",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An Opinionated Design System",
   "main": "build/index.js",
   "typings": "build/index.d.ts",
