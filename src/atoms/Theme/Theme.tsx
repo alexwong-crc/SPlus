@@ -8,7 +8,7 @@ interface ITheme {
 
 interface IProps {
   children: React.ReactNode;
-  theme: ITheme;
+  theme?: ITheme;
 }
 
 const Theme: React.SFC<IProps> = ({
