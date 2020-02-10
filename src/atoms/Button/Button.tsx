@@ -1,9 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import colourTheme from "../../colourTheme";
 import { Icon } from "../../index";
-
-const { action } = colourTheme;
 
 interface IStyledButton {
   type: "button" | "submit" | "reset";
@@ -13,13 +10,13 @@ interface IStyledButton {
 export const StyledButton = styled.button<IStyledButton>`
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  background-color: ${action.main.code};
-  color: ${action.main.text};
+  background-color: ${({ theme }): string => theme.action.main.code};
+  color: ${({ theme }): string => theme.action.main.text};
   border: none;
   font-size: 0.8rem;
   position: relative;
   :active {
-    background-color: ${action.dark.code};
+    background-color: ${({ theme }): string => theme.action.dark.code};
   }
   :hover {
     cursor: pointer;
@@ -30,7 +27,7 @@ export const StyledButton = styled.button<IStyledButton>`
   :disabled {
     cursor: default;
     opacity: 0.6;
-    background-color: ${action.main.code};
+    background-color: ${({ theme }): string => theme.action.main.code};
   }
   span.text {
     opacity: ${({ loading }): number => (loading ? 0 : 1)};
