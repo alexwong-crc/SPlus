@@ -5,7 +5,7 @@
   "main": "build/index.js",
   "typings": "build/index.d.ts",
   "scripts": {
-    "start": "start-storybook --config-dir config/storybook",
+    "start": "start-storybook --config-dir config/storybook --port 3000",
     "test": "jest --config ./config/jest/config.js",
     "lint": "eslint . --ext .ts,.tsx",
     "clean": "rm -rf build",
