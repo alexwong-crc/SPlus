@@ -1,11 +1,11 @@
 {
   "name": "splus",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An Opinionated Design System",
   "main": "build/index.js",
   "typings": "build/index.d.ts",
   "scripts": {
-    "start": "start-storybook --config-dir config/storybook",
+    "start": "start-storybook --config-dir config/storybook --port 3000",
     "test": "jest --config ./config/jest/config.js",
     "lint": "eslint . --ext .ts,.tsx",
     "clean": "rm -rf build",
@@ -44,6 +44,7 @@
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^2.3.0",
     "fork-ts-checker-webpack-plugin": "^3.0.1",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^25.1.0",
     "jest-styled-components": "^7.0.0",
     "react-is": "^16.12.0",

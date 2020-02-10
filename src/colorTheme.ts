@@ -34,3 +34,33 @@ export default {
     shadeSix: { code: "#F8F8F8", text: "#2C2C2C" }
   }
 };
+
+interface IColourCode {
+  code: string;
+  text: string;
+}
+
+interface IColour {
+  main: IColourCode;
+  light: IColourCode;
+  dark: IColourCode;
+}
+
+interface IColourBlack {
+  main: IColourCode;
+  shadeOne: IColourCode;
+  shadeTwo: IColourCode;
+  shadeThree: IColourCode;
+  shadeFour: IColourCode;
+  shadeFive: IColourCode;
+  shadeSix: IColourCode;
+}
+
+export interface IColourTheme {
+  primary: IColour;
+  secondary: IColour;
+  complimentary: IColour;
+  action: IColour;
+  error: IColour;
+  black: IColourBlack;
+}
