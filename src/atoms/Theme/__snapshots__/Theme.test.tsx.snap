@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Theme component should match snapshot 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "action": Object {
+        "dark": Object {
+          "code": "#32AA27",
+          "text": "#FFFFFF",
+        },
+        "light": Object {
+          "code": "#A0F199",
+          "text": "#FFFFFF",
+        },
+        "main": Object {
+          "code": "#76C56F",
+          "text": "#FFFFFF",
+        },
+      },
+      "black": Object {
+        "main": Object {
+          "code": "#2C2C2C",
+          "text": "#FFFFFF",
+        },
+        "shadeFive": Object {
+          "code": "#ECECEC",
+          "text": "#2C2C2C",
+        },
+        "shadeFour": Object {
+          "code": "#CCCCCC",
+          "text": "#2C2C2C",
+        },
+        "shadeOne": Object {
+          "code": "#454545",
+          "text": "#FFFFFF",
+        },
+        "shadeSix": Object {
+          "code": "#F8F8F8",
+          "text": "#2C2C2C",
+        },
+        "shadeThree": Object {
+          "code": "#979797",
+          "text": "#FFFFFF",
+        },
+        "shadeTwo": Object {
+          "code": "#696767",
+          "text": "#FFFFFF",
+        },
+      },
+      "complimentary": Object {
+        "dark": Object {
+          "code": "#DBDF16",
+          "text": "#2C2C2C",
+        },
+        "light": Object {
+          "code": "#FAFC97",
+          "text": "#2C2C2C",
+        },
+        "main": Object {
+          "code": "#F1F45A",
+          "text": "#2C2C2C",
+        },
+      },
+      "error": Object {
+        "dark": Object {
+          "code": "#CB0018",
+          "text": "#FFFFFF",
+        },
+        "light": Object {
+          "code": "#FF4E4E",
+          "text": "#FFFFFF",
+        },
+        "main": Object {
+          "code": "#FF001F",
+          "text": "#FFFFFF",
+        },
+      },
+      "primary": Object {
+        "dark": Object {
+          "code": "#0C2134",
+          "text": "#FFFFFF",
+        },
+        "light": Object {
+          "code": "#3777B2",
+          "text": "#FFFFFF",
+        },
+        "main": Object {
+          "code": "#214464",
+          "text": "#FFFFFF",
+        },
+      },
+      "secondary": Object {
+        "dark": Object {
+          "code": "#74212B",
+          "text": "#FFFFFF",
+        },
+        "light": Object {
+          "code": "#FA485E",
+          "text": "#FFFFFF",
+        },
+        "main": Object {
+          "code": "#C14050",
+          "text": "#FFFFFF",
+        },
+      },
+    }
+  }
+>
+  <div>
+    hello
+  </div>
+</ThemeProvider>
+`;
