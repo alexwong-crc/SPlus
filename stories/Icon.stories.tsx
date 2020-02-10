@@ -1,6 +1,5 @@
 import React from "react";
-import Icon from "../src/atoms/Icon/index";
-import colourTheme from "../src/colourTheme";
+import { Icon, colourTheme } from "../src";
 
 export default { title: "Icon" };
 

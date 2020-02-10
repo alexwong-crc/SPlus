@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import colourTheme from "../../colourTheme";
+import colourTheme from "../../styles/colourTheme";
 
 interface ITheme {
   [index: string]: string | object;
