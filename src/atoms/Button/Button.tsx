@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import colourTheme from "../../colorTheme";
+import colourTheme from "../../colourTheme";
 import { Icon } from "../../index";
 
 const { action } = colourTheme;
