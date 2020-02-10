@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Button from "./index";
+import Button from "../src/atoms/Button/index";
 
 export default { title: "Button" };
 
