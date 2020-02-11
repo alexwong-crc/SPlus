@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import TransitionIcon from "./TransitionIcon";
+import StatusIcon from "./StatusIcon";
 
 interface IStyledButton {
   type: "button" | "submit" | "reset";
-  loading?: boolean;
+  showText?: boolean;
 }
 
 export const StyledButton = styled.button<IStyledButton>`
@@ -30,7 +30,7 @@ export const StyledButton = styled.button<IStyledButton>`
     background-color: ${({ theme }): string => theme.action.main.code};
   }
   span.text {
-    opacity: ${({ loading }): number => (loading ? 0 : 1)};
+    opacity: ${({ showText }): number => (showText ? 1 : 0)};
   }
   span.icon {
     width: 100%;
@@ -47,33 +47,51 @@ export const StyledButton = styled.button<IStyledButton>`
 interface IButton {
   type?: "button" | "submit" | "reset";
   onClick?: () => void;
+  disabled?: boolean;
+  children: React.ReactNode;
   loading?: boolean;
   success?: boolean;
   failure?: boolean;
-  disabled?: boolean;
 }
-interface IProps extends IButton {
-  children: React.ReactNode;
-}
+
+export type StatusProps = "loading" | "success" | "failure" | null;
 
 const Button: React.SFC<IButton> = ({
   type = "button",
   onClick,
   children,
-  loading,
   disabled,
+  loading,
   success,
   failure
-}: IProps) => {
+}) => {
+  const [status, setStatus] = useState<StatusProps>(null);
+  const [showText, setShowText] = useState<boolean>(true);
+
+  useEffect(() => {
+    if (loading) {
+      setShowText(false);
+      setStatus("loading");
+    }
+    if (success) {
+      setShowText(false);
+      setStatus("success");
+    }
+    if (failure) {
+      setShowText(false);
+      setStatus("failure");
+    }
+  });
+
   return (
     <StyledButton
       type={type}
       onClick={onClick}
-      loading={loading}
+      showText={showText}
       disabled={disabled}
     >
       <span className="icon">
-        <TransitionIcon loading={loading} success={success} failure={failure} />
+        <StatusIcon status={status} />
       </span>
       <span className="text">{children}</span>
     </StyledButton>
