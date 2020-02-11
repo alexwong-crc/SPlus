@@ -1,39 +1,35 @@
 import React from "react";
-import { Icon } from "../../index";
+import { StatusProps } from "./Button";
+import Icon from "../Icon";
 
 interface ITransitionIcon {
-  loading?: boolean;
-  success?: boolean;
-  failure?: boolean;
+  status?: StatusProps;
 }
 
+type IconNames = "spinner" | "check" | "times";
+
 const TransitionIcon: React.SFC<ITransitionIcon> = ({
-  loading,
-  success,
-  failure
+  status
 }: ITransitionIcon) => {
-  const renderLoading = () =>
-    loading && <Icon icon="spinner" spin transform="grow-5" />;
-
-  // const renderSuccess = () =>
-  //   loading && (
-  //     <span className="icon">
-  //       <Icon icon="spinner" spin transform="grow-5" />
-  //     </span>
-  //   );
-
-  const renderLogic = () => {
-    if (success) {
-      return "yes";
-    } else if (loading) {
-      return renderLoading();
-    } else if (failure) {
-      return "no";
+  const renderIcon = (): IconNames => {
+    switch (status) {
+      case "loading":
+        return "spinner";
+      case "success":
+        return "check";
+      case "failure":
+        return "times";
+      default:
+        return "spinner";
     }
-    return null;
   };
-
-  return <>{renderLogic()}</>;
+  return !status ? null : (
+    <Icon
+      icon={renderIcon()}
+      spin={status === "loading" ? true : false}
+      transform="grow-5"
+    />
+  );
 };
 
 export default TransitionIcon;
