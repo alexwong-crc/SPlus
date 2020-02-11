@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Icon } from "../../index";
 import TransitionIcon from "./TransitionIcon";
 
 interface IStyledButton {
@@ -49,6 +48,8 @@ interface IButton {
   type?: "button" | "submit" | "reset";
   onClick?: () => void;
   loading?: boolean;
+  success?: boolean;
+  failure?: boolean;
   disabled?: boolean;
 }
 interface IProps extends IButton {
@@ -60,7 +61,9 @@ const Button: React.SFC<IButton> = ({
   onClick,
   children,
   loading,
-  disabled
+  disabled,
+  success,
+  failure
 }: IProps) => {
   return (
     <StyledButton
@@ -69,12 +72,9 @@ const Button: React.SFC<IButton> = ({
       loading={loading}
       disabled={disabled}
     >
-      <TransitionIcon />
-      {loading && (
-        <span className="icon">
-          <Icon icon="spinner" spin transform="grow-5" />
-        </span>
-      )}
+      <span className="icon">
+        <TransitionIcon loading={loading} success={success} failure={failure} />
+      </span>
       <span className="text">{children}</span>
     </StyledButton>
   );
