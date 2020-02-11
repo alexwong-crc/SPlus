@@ -2,15 +2,13 @@ import React from "react";
 import { StatusProps } from "./Button";
 import Icon from "../Icon";
 
-interface ITransitionIcon {
+interface IStatusIcon {
   status?: StatusProps;
 }
 
 type IconNames = "spinner" | "check" | "times";
 
-const TransitionIcon: React.SFC<ITransitionIcon> = ({
-  status
-}: ITransitionIcon) => {
+const StatusIcon: React.SFC<IStatusIcon> = ({ status }: IStatusIcon) => {
   const renderIcon = (): IconNames => {
     switch (status) {
       case "loading":
@@ -32,4 +30,4 @@ const TransitionIcon: React.SFC<ITransitionIcon> = ({
   );
 };
 
-export default TransitionIcon;
+export default StatusIcon;
