@@ -32,9 +32,6 @@ const StyledButton = styled.button<IStyledButton>`
     opacity: ${({ showText }): number => (showText ? 1 : 0)};
   }
   span.icon {
-    display: ${({ showIcon }): string => (showIcon ? "block" : "none")};
-  }
-  span.icon {
     width: 100%;
     height: 100%;
     top: 0;
