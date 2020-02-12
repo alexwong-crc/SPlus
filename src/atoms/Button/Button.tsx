@@ -32,16 +32,16 @@ const Button: React.SFC<IButton> = ({
       setShowText(false);
       setShowIcon(true);
       setStatus("loading");
-    }
-    if (success) {
-      setShowText(false);
-      setShowIcon(true);
-      setStatus("success");
-    }
-    if (failure) {
-      setShowText(false);
-      setShowIcon(true);
-      setStatus("failure");
+    } else {
+      if (success) {
+        setShowText(false);
+        setShowIcon(true);
+        setStatus("success");
+      } else if (failure) {
+        setShowText(false);
+        setShowIcon(true);
+        setStatus("failure");
+      }
     }
   });
 

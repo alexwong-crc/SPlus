@@ -10,22 +10,24 @@ export const withLoader: React.SFC = () => {
   const [success, setSuccess] = useState(false);
   const [failure, setFailure] = useState(false);
 
-  const toggleLoading = (): void => {
-    setLoading(!loading);
+  const handleOnClick = (): void => {
+    setLoading(true);
   };
 
   const applySuccess = (): void => {
     setSuccess(true);
+    setLoading(false);
   };
 
   const applyFailure = (): void => {
     setFailure(true);
+    setLoading(false);
   };
 
   useEffect(() => {
     loading &&
       setTimeout(() => {
-        toggleLoading();
+        setLoading(false);
         applySuccess();
       }, 1500);
   });
@@ -35,7 +37,7 @@ export const withLoader: React.SFC = () => {
       loading={loading}
       success={success}
       failure={failure}
-      onClick={toggleLoading}
+      onClick={handleOnClick}
       disabled={loading}
     >
       Click Here
