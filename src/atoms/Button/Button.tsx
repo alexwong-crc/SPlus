@@ -24,19 +24,23 @@ const Button: React.SFC<IButton> = ({
   failure
 }) => {
   const [status, setStatus] = useState<StatusProps>(null);
+  const [showIcon, setShowIcon] = useState<boolean>(false);
   const [showText, setShowText] = useState<boolean>(true);
 
   useEffect(() => {
     if (loading) {
       setShowText(false);
+      setShowIcon(true);
       setStatus("loading");
     }
     if (success) {
       setShowText(false);
+      setShowIcon(true);
       setStatus("success");
     }
     if (failure) {
       setShowText(false);
+      setShowIcon(true);
       setStatus("failure");
     }
   });
@@ -46,6 +50,7 @@ const Button: React.SFC<IButton> = ({
       type={type}
       onClick={onClick}
       showText={showText}
+      showIcon={showIcon}
       disabled={disabled}
     >
       <span className="icon">

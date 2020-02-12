@@ -3,6 +3,7 @@ import styled from "styled-components";
 interface IStyledButton {
   type: "button" | "submit" | "reset";
   showText?: boolean;
+  showIcon?: boolean;
 }
 
 const StyledButton = styled.button<IStyledButton>`
@@ -29,6 +30,9 @@ const StyledButton = styled.button<IStyledButton>`
   }
   span.text {
     opacity: ${({ showText }): number => (showText ? 1 : 0)};
+  }
+  span.icon {
+    display: ${({ showIcon }): string => (showIcon ? "block" : "none")};
   }
   span.icon {
     width: 100%;
