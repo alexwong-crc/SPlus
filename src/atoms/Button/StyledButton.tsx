@@ -3,7 +3,6 @@ import styled from "styled-components";
 interface IStyledButton {
   type: "button" | "submit" | "reset";
   showText?: boolean;
-  showIcon?: boolean;
 }
 
 const StyledButton = styled.button<IStyledButton>`

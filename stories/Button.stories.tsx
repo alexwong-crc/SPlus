@@ -16,12 +16,10 @@ export const withLoader: React.SFC = () => {
 
   const applySuccess = (): void => {
     setSuccess(true);
-    setLoading(false);
   };
 
   const applyFailure = (): void => {
     setFailure(true);
-    setLoading(false);
   };
 
   useEffect(() => {

@@ -2,7 +2,6 @@
 
 exports[`Button Component should snapshot the button 1`] = `
 <styled.button
-  showIcon={false}
   showText={true}
   type="button"
 >
