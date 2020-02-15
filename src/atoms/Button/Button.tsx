@@ -25,10 +25,12 @@ const Button: React.SFC<IButton> = ({
 }) => {
   const [status, setStatus] = useState<StatusProps>(null);
   const [showText, setShowText] = useState<boolean>(true);
+  const [overrideDisable, setOverrideDisable] = useState<boolean>(false);
 
   const resetButton = (): void => {
     setShowText(true);
     setStatus(null);
+    setOverrideDisable(false);
   };
 
   useEffect(() => {
@@ -39,10 +41,12 @@ const Button: React.SFC<IButton> = ({
       if (success) {
         setShowText(false);
         setStatus("success");
+        setOverrideDisable(true);
         setTimeout(resetButton, 1000);
       } else if (failure) {
         setShowText(false);
         setStatus("failure");
+        setOverrideDisable(true);
         setTimeout(resetButton, 1000);
       }
     }
@@ -53,7 +57,7 @@ const Button: React.SFC<IButton> = ({
       type={type}
       onClick={onClick}
       showText={showText}
-      disabled={disabled}
+      disabled={disabled || overrideDisable}
     >
       <span className="icon">
         <StatusIcon status={status} />
