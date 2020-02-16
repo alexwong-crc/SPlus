@@ -1,5 +1,24 @@
 version: 2
 jobs:
+  Deploy-Static-Site:
+    docker:
+      - image: circleci/node:12.14-browsers
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Install AWS CLI
+          command: |
+            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            unzip awscliv2.zip
+            sudo ./aws/install
+      - run:
+          name: Build storybook static page
+          command: yarn build-public
+      - run:
+          name: Sync S3 Bucket
+          command: aws s3 sync public s3://splus.alexhomingwong.co.uk
   Build:
     docker:
       - image: circleci/node:12.14-browsers
@@ -54,6 +73,13 @@ workflows:
       - Publish:
           requires:
             - Unit-Tests
+          filters:
+            branches:
+              only:
+                - master
+      - Deploy-Static-Site:
+          requires:
+            - Publish
           filters:
             branches:
               only:
