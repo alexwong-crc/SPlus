@@ -9,7 +9,8 @@
     "test": "jest --config ./config/jest/config.js",
     "lint": "eslint . --ext .ts,.tsx",
     "clean": "rm -rf build",
-    "build": "yarn clean && tsc"
+    "build": "yarn clean && tsc",
+    "build-public": "yarn build-storybook --config-dir config/storybook -o public"
   },
   "repository": {
     "type": "git",
