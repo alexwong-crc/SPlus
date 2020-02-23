@@ -7,17 +7,37 @@ export const withText: React.SFC = () => <Button>Click Here</Button>;
 
 export const withLoader: React.SFC = () => {
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [failure, setFailure] = useState(false);
 
-  const toggleLoading = (): void => {
-    setLoading(!loading);
+  const handleOnClick = (): void => {
+    setLoading(true);
+  };
+
+  const applySuccess = (): void => {
+    setSuccess(true);
+  };
+
+  const applyFailure = (): void => {
+    setFailure(true);
   };
 
   useEffect(() => {
-    loading && setTimeout(toggleLoading, 1500);
+    loading &&
+      setTimeout(() => {
+        setLoading(false);
+        applySuccess();
+      }, 1500);
   });
 
   return (
-    <Button loading={loading} onClick={toggleLoading} disabled={loading}>
+    <Button
+      loading={loading}
+      success={success}
+      failure={failure}
+      onClick={handleOnClick}
+      disabled={loading}
+    >
       Click Here
     </Button>
   );

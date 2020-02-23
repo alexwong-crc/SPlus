@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StatusIcon should match last snapshot 1`] = `
+<Fragment>
+  <StyledIcon
+    className=""
+    id="StyledIcon"
+  >
+    <Icon
+      icon="times"
+      transform="grow-5"
+    />
+  </StyledIcon>
+</Fragment>
+`;
+
+exports[`StyledIcon should match snapshot 1`] = `
+.c0 {
+  position: absolute;
+  -webkit-transform: translateY(-200%);
+  -ms-transform: translateY(-200%);
+  transform: translateY(-200%);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.c0.slideInOut {
+  -webkit-animation-name: slideInOut;
+  animation-name: slideInOut;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
+<div
+  className="c0"
+/>
+`;
