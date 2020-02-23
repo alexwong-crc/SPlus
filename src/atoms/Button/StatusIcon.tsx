@@ -9,7 +9,7 @@ interface IStatusIcon {
 
 type IconNames = "spinner" | "check" | "times";
 
-const StyledIcon = styled.div<IStatusIcon>`
+export const StyledIcon = styled.div<IStatusIcon>`
   position: absolute;
   transform: translateY(-200%);
   transition: 0.3s;
@@ -34,6 +34,8 @@ const StyledIcon = styled.div<IStatusIcon>`
   }
 `;
 
+StyledIcon.displayName = "StyledIcon";
+
 const StatusIcon: React.SFC<IStatusIcon> = ({ status }: IStatusIcon) => {
   const renderIcon = (): IconNames => {
     switch (status) {
@@ -49,6 +51,7 @@ const StatusIcon: React.SFC<IStatusIcon> = ({ status }: IStatusIcon) => {
   return (
     <>
       <StyledIcon
+        id="StyledIcon"
         className={
           status === "success" || status === "failure" ? "slideInOut" : ""
         }
