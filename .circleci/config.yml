@@ -62,17 +62,29 @@ workflows:
   version: 2
   Build-and-Publish:
     jobs:
-      - Build
+      - Build:
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+$/
       - Unit-Tests:
           requires:
             - Build
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+$/
       - Publish:
           requires:
             - Unit-Tests
           filters:
             branches:
-              only:
-                - master
+              ignore: /.*/
+            tags:
+              only: /^\d+\.\d+\.\d+$/
       - Deploy-Static-Site:
           requires:
             - Publish
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^\d+\.\d+\.\d+$/
