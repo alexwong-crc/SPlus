@@ -41,7 +41,27 @@ jobs:
           at: .
       - run:
           name: Yarn test
-          command: yarn test
+          command: yarn test --coverage
+      - run:
+          name: Copy coverage json to be uploaded
+          command: |
+            dateNow=$(date +%F)
+            mkdir repoStats
+            mv coverage/coverage-final.json "repoStats/${dateNow}.json"
+      - persist_to_workspace:
+          root: .
+          paths: repoStats
+  Upload-coverage:
+    docker:
+      - image: circleci/node:12.14-browsers
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - aws-s3/copy:
+          arguments: --recursive
+          from: repoStats
+          to: s3://repo-stats/splus/coverage/
   Publish:
     docker:
       - image: circleci/node:12.14-browsers
@@ -72,6 +92,12 @@ workflows:
           filters:
             tags:
               only: /^\d+\.\d+\.\d+$/
+      - Upload-coverage:
+          requires:
+            - Unit-Tests
+          filters:
+            branches:
+              only: master
       - Publish:
           requires:
             - Unit-Tests
