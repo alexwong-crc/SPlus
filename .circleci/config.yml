@@ -92,6 +92,12 @@ workflows:
           filters:
             tags:
               only: /^\d+\.\d+\.\d+$/
+      - Upload-coverage:
+          requires:
+            - Unit-Tests
+          filters:
+            branches:
+              only: master
       - Publish:
           requires:
             - Unit-Tests
